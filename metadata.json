@@ -1,0 +1,7 @@
+{
+  "name": "Qynex Pulse",
+  "description": "Universal time clock with breadcrumb GPS, driving mode logic, job coding, and drag-and-drop scheduling.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
