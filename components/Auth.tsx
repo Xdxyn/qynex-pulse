@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../lib/supabase';
 import { ShieldCheck, Mail, Lock, Loader2 } from 'lucide-react';
 
 export const Auth: React.FC = () => {
@@ -35,7 +36,7 @@ export const Auth: React.FC = () => {
              <span className="font-bold text-white text-3xl">Q</span>
           </div>
           <h1 className="text-2xl font-bold text-white">Qynex Pulse</h1>
-          <p className="text-slate-400">Enterprise Time & Operations</p>
+          <p className="text-slate-400 text-sm">Secure Sign In</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
@@ -46,15 +47,15 @@ export const Auth: React.FC = () => {
           )}
           
           <div>
-            <label className="block text-sm font-medium text-slate-400 mb-1">Email</label>
+            <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Email Address</label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Mail size={18} className="text-slate-500" />
+                <Mail size={16} className="text-slate-500" />
               </div>
               <input
                 type="email"
                 required
-                className="w-full bg-slate-950 border border-slate-700 rounded-lg pl-10 pr-3 py-3 text-white outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors"
+                className="w-full bg-slate-950 border border-slate-700 rounded-lg pl-10 pr-3 py-3 text-white outline-none focus:border-teal-500 transition-colors"
                 placeholder="name@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -63,15 +64,15 @@ export const Auth: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-400 mb-1">Password</label>
+            <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Password</label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Lock size={18} className="text-slate-500" />
+                <Lock size={16} className="text-slate-500" />
               </div>
               <input
                 type="password"
                 required
-                className="w-full bg-slate-950 border border-slate-700 rounded-lg pl-10 pr-3 py-3 text-white outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors"
+                className="w-full bg-slate-950 border border-slate-700 rounded-lg pl-10 pr-3 py-3 text-white outline-none focus:border-teal-500 transition-colors"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -82,16 +83,16 @@ export const Auth: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-teal-900/20 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-teal-900/20 flex items-center justify-center space-x-2 disabled:opacity-50"
           >
             {loading ? <Loader2 size={20} className="animate-spin" /> : <ShieldCheck size={20} />}
             <span>{loading ? 'Authenticating...' : 'Sign In'}</span>
           </button>
         </form>
 
-        <div className="mt-6 text-center">
-            <p className="text-xs text-slate-500">
-                Authorized personnel only. All activities are monitored.
+        <div className="mt-8 text-center border-t border-slate-800 pt-6">
+            <p className="text-[10px] text-slate-600 uppercase tracking-widest font-black">
+                Restricted Access Only
             </p>
         </div>
       </div>

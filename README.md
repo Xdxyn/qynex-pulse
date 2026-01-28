@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Qynex Pulse
 
-This contains everything you need to run your app locally.
+Universal time clock + breadcrumb GPS mileage + live map + approvals + exports.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1b8-4KA4qhEXieEhK-U467KKCyAz6rDgO
+## Features
 
-## Run Locally
+- **Time Clock**: Start and stop shifts with job coding.
+- **GPS Mileage**: Tracks location breadcrumbs and calculates mileage based on speed thresholds (driving mode).
+- **Live Map**: Real-time view of active staff locations.
+- **Approvals**: Admin interface to approve/reject shift edits.
+- **Staff Scheduler**: AI-assisted or manual scheduling.
+- **Exports**: Download CSV reports.
 
-**Prerequisites:**  Node.js
+## Getting Started
 
+1.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2.  **Environment Setup**
+    Create a `.env` file with your Supabase credentials:
+    ```
+    VITE_SUPABASE_URL=your_url
+    VITE_SUPABASE_ANON_KEY=your_key
+    ```
+
+3.  **Run Locally**
+    ```bash
+    npm run dev
+    ```
+
+## Project Structure
+
+- `/components`: UI components (TimeClock, ShiftHistory, Maps, etc.)
+- `/lib`: Supabase client configuration.
+- `/types`: TypeScript interfaces for DB schema.
